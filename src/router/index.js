@@ -4,18 +4,19 @@ import Home from "../views/Home.vue";
 
 Vue.use(VueRouter);
 
-const routes = [
-  {
-    path: "/",
-    name: "Home",
-    component: Home
-  }
-];
-
 const router = new VueRouter({
   mode: "history",
   base: process.env.BASE_URL,
-  routes
+  scrollBehavior(){
+    return window.scrollTo({top:0, behavior: 'smooth'})
+  },
+  routes: [
+    {
+      path: "/",
+      name: "Home",
+      component: Home
+    }
+  ]
 });
 
 export default router;
