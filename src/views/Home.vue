@@ -19,7 +19,7 @@
   };
 </script>
 
-<style>
+<style scoped>
   h1 {
     color: #87f;
     margin-top: 40px;

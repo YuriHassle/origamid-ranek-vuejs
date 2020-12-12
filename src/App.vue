@@ -2,7 +2,9 @@
   <div id="app">
     <TheHeader />
     <main id="main">
-      <router-view />
+      <transition mode="out-in">
+        <router-view />
+      </transition>
     </main>
     <TheFooter />
   </div>
@@ -41,7 +43,7 @@
   }
 
   body {
-    font-family: Noto Serif, Helvetica, Arial, sans-serif;
+    font-family: 'Roboto', Helvetica, Arial, sans-serif;
     color: #345;
     background: url('./assets/pattern.svg') repeat top;
   }
@@ -67,7 +69,7 @@
     box-shadow: 0 4px 8px rgba(30, 60, 90, 0.2);
     transition: all 0.3s;
     border: none;
-    font-family: Noto Serif, Helvetica, Arial, sans-serif;
+    font-family: 'Roboto', Helvetica, Arial, sans-serif;
     cursor: pointer;
   }
 
@@ -86,15 +88,19 @@
     flex: 1;
   }
 
+  label {
+    margin-bottom: 5px;
+  }
+
   input,
   textarea {
     border-radius: 4px;
-    border: none;
+    border: 1px solid white;
     padding: 15px;
     box-shadow: 0 4px 8px rgba(30, 60, 90, 0.1);
     transition: all 0.3s;
     font-size: 1rem;
-    font-family: Noto Serif, Helvetica, Arial, sans-serif;
+    font-family: 'Roboto', Helvetica, Arial, sans-serif;
     margin-bottom: 15px;
   }
 
