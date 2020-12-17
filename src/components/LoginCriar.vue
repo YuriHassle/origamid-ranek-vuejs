@@ -4,42 +4,53 @@
     <transition mode="out-in">
       <button class="btn criar" v-if="!criar" @click="criar = true">Criar conta</button>
       <UsuarioForm v-else>
-        <button class="btn btn-form">Criar Usuário</button>
+        <button class="btn btn-form" @click.prevent="criarUsuario">Criar Usuário</button>
       </UsuarioForm>
     </transition>
   </section>
 </template>
 
 <script>
-import UsuarioForm from '@/components/UsuarioForm'
+  import UsuarioForm from '@/components/UsuarioForm';
   export default {
     name: 'LoginCriar',
-    components:{
-      UsuarioForm
+    components: {
+      UsuarioForm,
     },
-    data(){
-      return{
+    data() {
+      return {
         criar: false,
-      }
-    }
+      };
+    },
+    methods: {
+      async criarUsuario() {
+        try {
+          await this.$store.dispatch('criarUsuario', this.$store.state.usuario);
+          await this.$store.dispatch('getUsuario', this.$store.state.usuario.email);
+          this.$router.push({ name: 'usuario' });
+        } catch (error) {
+          console.log(error);
+        }
+      },
+    },
   };
 </script>
 
 <style scoped>
-h2{
-  text-align: center;
-  margin-top: 40px;
-  margin-bottom: 10px;
-}
+  h2 {
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 10px;
+  }
 
-.btn{
-  width: 100%;
-  max-width: 300px;
-  margin-left: auto;
-  margin-right: auto;
-}
+  .btn {
+    width: 100%;
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
-.btn-form{
-  max-width: 100%;
-}
+  .btn-form {
+    max-width: 100%;
+  }
 </style>

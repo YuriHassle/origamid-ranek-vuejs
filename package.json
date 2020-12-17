@@ -52,6 +52,7 @@
     "semi": true,
     "singleQuote": true,
     "vueIndentScriptAndStyle": true,
-    "arrowParens": "avoid"
+    "arrowParens": "avoid",
+    "printWidth": 90
   }
 }
