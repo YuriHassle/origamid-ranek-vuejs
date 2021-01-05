@@ -1,7 +1,9 @@
 <template>
   <section>
     <UsuarioForm>
-      <button class="btn" @click.prevent="atualizarUsuario">Atualizar Usuário</button>
+      <button class="btn" @click.prevent="atualizarUsuario">
+        Atualizar Usuário
+      </button>
     </UsuarioForm>
   </section>
 </template>
@@ -17,7 +19,10 @@
     methods: {
       atualizarUsuario() {
         api
-          .put(`/usuario/${this.$store.state.usuario.id}`, this.$store.state.usuario)
+          .put(
+            `/usuario/${this.$store.state.usuario.id}`,
+            this.$store.state.usuario
+          )
           .then(() => {
             this.$store.dispatch('getUsuario', this.$store.state.usuario.id);
             this.$router.push({ name: 'usuario' });

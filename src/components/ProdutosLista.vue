@@ -20,7 +20,9 @@
         />
       </div>
       <div v-else-if="produtos && produtos.length === 0" key="sem-resultado">
-        <p class="sem-resultados">Busca sem resultados. Tente buscar outro termo.</p>
+        <p class="sem-resultados">
+          Busca sem resultados. Tente buscar outro termo.
+        </p>
       </div>
       <PaginaCarregando v-else key="carregando" />
     </transition>

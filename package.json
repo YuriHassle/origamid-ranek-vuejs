@@ -53,6 +53,6 @@
     "singleQuote": true,
     "vueIndentScriptAndStyle": true,
     "arrowParens": "avoid",
-    "printWidth": 90
+    "printWidth": 80
   }
 }
