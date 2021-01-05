@@ -1,9 +1,9 @@
-export function serialize(obj){
-    let queryString = '';
-    for (let key in obj) {
-      queryString += `&${key}=${obj[key]}`;
-    }
-    return queryString;
+export function serialize(obj) {
+  let queryString = '';
+  for (let key in obj) {
+    queryString += `&${key}=${obj[key]}`;
+  }
+  return queryString;
 }
 
 export function mapFields(options) {
@@ -16,7 +16,7 @@ export function mapFields(options) {
       },
       set(value) {
         this.$store.commit(options.mutation, { [field]: value });
-      }
+      },
     };
   }
   return object;
