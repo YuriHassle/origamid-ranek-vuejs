@@ -31,7 +31,7 @@
     },
     methods: {
       getProduto() {
-        api.get(`/produto/${this.id}`).then((res) => {
+        api.get(`/produto/${this.id}`).then(res => {
           this.produto = res.data;
         });
       },

@@ -20,9 +20,7 @@
         />
       </div>
       <div v-else-if="produtos && produtos.length === 0" key="sem-resultado">
-        <p class="sem-resultados">
-          Busca sem resultados. Tente buscar outro termo.
-        </p>
+        <p class="sem-resultados">Busca sem resultados. Tente buscar outro termo.</p>
       </div>
       <PaginaCarregando v-else key="carregando" />
     </transition>
@@ -60,7 +58,7 @@
     methods: {
       getProdutos() {
         this.produtos = null;
-        api.get(this.url).then((res) => {
+        api.get(this.url).then(res => {
           this.produtos = res.data;
           this.produtosTotal = Number(res.headers['x-total-count']);
         });
