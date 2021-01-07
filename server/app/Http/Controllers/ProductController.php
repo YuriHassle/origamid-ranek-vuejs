@@ -11,8 +11,9 @@ class ProductController extends BaseController
 {
     public function index(Request $request)
     {
-        $products = Product::all();
+        $products = Product::paginate(9);
         return $this->sendResponse($products->toArray(), 'Produtos recuperados com sucesso.');
+        //    ->header('X-Total-Count', Product::all()->count());
     }
 
     public function store(Request $request)
