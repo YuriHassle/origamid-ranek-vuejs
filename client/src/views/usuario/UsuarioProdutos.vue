@@ -36,7 +36,7 @@
       deletarProduto(id) {
         const confirmar = window.confirm('Deseja remover este produto?');
         if (confirmar) {
-          api.delete(`/produto/${id}`).then(() => {
+          api.delete(`/product/${id}`).then(() => {
             this.getUsuarioProdutos().catch(error => {
               console.log(error.response);
             });

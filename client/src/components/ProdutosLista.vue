@@ -49,7 +49,7 @@
     computed: {
       url() {
         const query = serialize(this.$route.query);
-        return `/produto?_limit=${this.produtosPorPagina}${query}`;
+        return `/products?_=_${query}`;
       },
     },
     watch: {
@@ -60,9 +60,10 @@
     methods: {
       getProdutos() {
         this.produtos = null;
-        api.get(this.url).then(res => {
-          this.produtos = res.data;
-          this.produtosTotal = Number(res.headers['x-total-count']);
+        api.get(this.url).then(({ data: res }) => {
+          this.produtos = res.data.data;
+          //this.produtosTotal = Number(res.headers['X-Total-Count']);
+          this.produtosTotal = res.data.total;
         });
       },
     },

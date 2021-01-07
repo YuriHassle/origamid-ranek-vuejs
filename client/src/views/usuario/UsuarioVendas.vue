@@ -44,9 +44,11 @@
     },
     methods: {
       getVendas() {
-        api.get(`/transacao?vendedor_id=${this.usuario.id}`).then(response => {
-          this.vendas = response.data;
-        });
+        api
+          .get(`/transaction?vendedor_id=${this.usuario.id}`)
+          .then(response => {
+            this.vendas = response.data;
+          });
       },
     },
     watch: {

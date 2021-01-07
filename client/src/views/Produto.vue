@@ -10,7 +10,7 @@
         <h1>{{ produto.nome }}</h1>
         <p class="preco">{{ produto.preco | numeroPreco }}</p>
         <p class="descricao">{{ produto.descricao }}</p>
-        <transition mode="out-in" v-if="produto.vendido === 'false'">
+        <transition mode="out-in" v-if="produto.vendido == false">
           <button class="btn" v-if="!finalizar" @click="finalizar = true">
             Comprar
           </button>
@@ -41,8 +41,8 @@
     },
     methods: {
       getProduto() {
-        api.get(`/produto/${this.id}`).then(res => {
-          this.produto = res.data;
+        api.get(`/products/${this.id}`).then(res => {
+          this.produto = res.data.data;
         });
       },
     },

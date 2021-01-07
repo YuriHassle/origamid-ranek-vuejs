@@ -20,7 +20,7 @@
       atualizarUsuario() {
         api
           .put(
-            `/usuario/${this.$store.state.usuario.id}`,
+            `/users/${this.$store.state.usuario.id}`,
             this.$store.state.usuario
           )
           .then(() => {

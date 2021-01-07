@@ -38,7 +38,7 @@
       },
       adicionarProduto() {
         this.formatarProduto();
-        api.post('/produto', this.produto).then(() => {
+        api.post('/product', this.produto).then(() => {
           this.$store.dispatch('getUsuarioProdutos');
         });
       },

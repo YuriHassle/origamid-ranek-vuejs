@@ -36,9 +36,11 @@
     },
     methods: {
       getCompras() {
-        api.get(`/transacao?comprador_id=${this.usuario.id}`).then(response => {
-          this.compras = response.data;
-        });
+        api
+          .get(`/transactions?comprador_id=${this.usuario.id}`)
+          .then(response => {
+            this.compras = response.data;
+          });
       },
     },
     watch: {

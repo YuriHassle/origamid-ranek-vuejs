@@ -28,7 +28,7 @@
       query(pagina) {
         return {
           ...this.$route.query,
-          _page: pagina,
+          page: pagina,
         };
       },
     },
